@@ -42,7 +42,7 @@ header {
 }
 
 .bio img {
-	max-width: 200px;
+	max-width: 600px;
 	display: flex;
 	justify-content: center;
 	
