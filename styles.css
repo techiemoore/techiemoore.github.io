@@ -1,22 +1,21 @@
-/* Reset some default styles */
+@font-face {
+    font-family: 'dos';
+    src: url('fonts/dos.woff2') format('woff2'),
+         url('fonts/dos.ttf') format('tff');
+    /* Add other formats (eot, ttf) if needed */
+    font-weight: normal !important;
+    font-style: normal !important;
+}
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'dos', sans-serif; /* Use your custom font */
-    background-color: black; /* Set the background to black */
-    color: white; /* Set text color to white */
+    font-family: 'dos', sans-serif; 
+    background-color: black; 
+    color: white; 
+    font-weight: normal !important;
+    font-style: normal !important;
 }
 
-@font-face {
-    font-family: 'dos';
-    src: url('../fonts/dos.woff2') format('woff2'),
-         url('../fonts/dos.ttf') format('tff');
-    /* Add other formats (eot, ttf) if needed */
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Styles for the header section */
 header {
     display: flex;
     align-items: center;
@@ -32,6 +31,8 @@ header {
 
 .bio {
     flex-grow: 1;
+    font-weight: normal !important;
+    font-style: normal !important;
 }
 
 /* Styles for the photo gallery */
