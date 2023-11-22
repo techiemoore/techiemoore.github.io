@@ -24,6 +24,11 @@ header {
     padding: 20px;
 }
 
+.profile img {
+    max-width: 200px;
+    margin-bottom: 20px; /* Add margin for spacing between image and bio */
+}
+
 
 /* Styles for the photo gallery */
 .gallery {
@@ -35,5 +40,18 @@ header {
 .gallery a {
     margin: 5px;
 }
+
+.bio {
+	max-width: 200px;
+	display: flex;
+	justify-content: center;
+	
+}
+
+.gallery img {
+    width: 100px; /* Adjust thumbnail size */
+    height: 100px; /* Adjust thumbnail size */
+}
+
 
 
