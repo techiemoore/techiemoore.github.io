@@ -7,61 +7,99 @@
     font-style: normal;
 }
 
-body, html {
-    font-family: 'dos', sans-serif; 
-    background-color: black; 
-    color: white; 
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+body,
+html {
+    font-family: 'dos', sans-serif;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
 }
 
 header {
     display: flex;
-    flex-direction: column; /* Change flex direction to column for mobile */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
 }
 
 .profile img {
     max-width: 200px;
-    margin-bottom: 20px; /* Add margin for spacing between image and bio */
-}
-
-/* Styles for the photo gallery */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.gallery a {
-    margin: 5px;
+    margin-bottom: 20px;
 }
 
 .bio img {
-    max-width: 100%; /* Ensure images in bio section are responsive */
+    max-width: 100%;
     height: auto;
-    display: block; /* Remove extra space below images */
-    margin: 0 auto; /* Center images */
-}
-
-.gallery img {
-    width: 100px; /* Adjust thumbnail size */
-    height: 100px; /* Adjust thumbnail size */
+    display: block;
+    margin: 0 auto;
 }
 
 /* Media queries for responsiveness */
 @media only screen and (max-width: 768px) {
-    /* Adjustments for smaller screens */
     header {
-        padding: 10px; /* Adjust padding for smaller screens */
+        padding: 10px;
     }
     .profile img {
-        max-width: 150px; /* Adjust profile image size for smaller screens */
+        max-width: 150px;
     }
-    .gallery img {
-        width: 80px; /* Adjust thumbnail size for smaller screens */
-        height: 80px; /* Adjust thumbnail size for smaller screens */
-    }
+}
+
+/* Styles for dropdown gallery */
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content img {
+    max-width: 200px;
+    cursor: pointer;
+}
+
+
+/* Styles for full-size image display */
+#overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#fullImageContainer {
+    position: fixed;
+    display: none;
+    z-index: 9999;
+    text-align: center;
+}
+
+#fullImage {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
 }
 

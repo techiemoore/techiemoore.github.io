@@ -13,19 +13,29 @@
         </div>
         <div class="bio">
             <img src="Header.png" alt="Name">
-            <p>Your Bio Here</p>
-        </div>
-    </header>
-    
-    <main>
+            <p>Hello!<br>
+I am Christopher James Moore.<br>
+I have created this site to help people get to know me at a glance.<br>
 
-        <div class="gallery">
-            <!-- Thumbnails for the photo gallery -->
-            <a href="images/photo1.jpg"><img src="images/thumb1.jpg" alt="Thumbnail 1"></a>
-            <a href="images/photo2.jpg"><img src="images/thumb2.jpg" alt="Thumbnail 2"></a>
-            <!-- Add more thumbnails as needed -->
-        </div>
-    </main>
+I enjoy building things: <br></p>
+
+
+  <div class="dropdown">
+    <button onclick="toggleGallery()" class="dropbtn">Gallery</button>
+    <div id="myDropdown" class="dropdown-content">
+      <img src="Pictures/20221004_120102_52451203335_o.jpg" alt="Image 1" onclick="openImage('Pictures/20221004_120102_52451203335_o.jpg')">
+      <img src="Pictures/20230724_175008_53069450409_o.jpg" alt="Image 2" onclick="openImage('Pictures/20230724_175008_53069450409_o.jpg')">
+      <!-- Add more images in a similar way -->
+    </div>
+  </div>
+
+  <div id="overlay" onclick="closeImage()"></div>
+  <div id="fullImageContainer">
+    <span class="close" onclick="closeImage()">&times;</span>
+    <img id="fullImage" src="" alt="Full Image">
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
 
