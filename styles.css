@@ -21,8 +21,6 @@
     pointer-events: none;
 }
 
-
-
 body,
 html {
     font-family: 'dos', sans-serif;
@@ -42,6 +40,7 @@ header {
 .profile img {
     max-width: 200px;
     margin-bottom: 20px;
+    filter: grayscale(100%) sepia(100%) hue-rotate(45deg) brightness(70%);
 }
 
 .bio img {
@@ -120,3 +119,14 @@ header {
     cursor: pointer;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #cc8a00; /* Set the color to #ffb000 (amber) */
+  mix-blend-mode: overlay; /* Overlay blend mode */
+  pointer-events: none; /* Allow interaction with underlying elements */
+  z-index: 9999; /* Ensure it's on top of other content */
+}
