@@ -13,7 +13,7 @@ body, h1, h2, p {
 
 /* Apply the custom font globally */
 body {
-  font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font as the first choice */
+  font-family: 'dos', Arial, sans-serif; /* Use the custom font as the first choice */
 }
 
 
