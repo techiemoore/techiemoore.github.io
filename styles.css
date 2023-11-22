@@ -8,7 +8,7 @@ body, h1, h2, p {
 /* Define the custom font with @font-face */
 @font-face {
   font-family: 'dos'; /* Name to refer to the font */
-  src: url('fonts/dos.ttf') format('ttf'); /* Path to the font file */
+  src: url('/fonts/dos.ttf') format('ttf'); /* Path to the font file */
 }
 
 /* Apply the custom font globally */
