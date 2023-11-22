@@ -1,0 +1,44 @@
+/* Basic reset for margins and paddings */
+body, h1, h2, p {
+  margin: 20px;
+  padding: 0;
+  color: white;
+}
+
+/* Profile header styles */
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture img {
+  max-width: 150px; /* Adjust size as needed */
+}
+
+.bio {
+  margin-left: 20px;
+}
+
+/* Photo gallery styles */
+.gallery {
+  text-align: center;
+}
+
+.thumbnails {
+  margin-bottom: 20px;
+}
+
+.thumbnails img {
+  width: 100px; /* Adjust thumbnail size */
+  margin: 5px;
+  cursor: pointer;
+}
+
+.full-image {
+  display: none;
+}
+
+.full-image img {
+  max-width: 80%; /* Adjust the width of the full-size image */
+}

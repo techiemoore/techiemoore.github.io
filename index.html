@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retro TUI Profile</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link your CSS file -->
+</head>
+<body>
+<body style="background-color:black;">
+  <header class="profile-header">
+    <div class="profile-picture">
+      <!-- Your profile picture here -->
+      <img src="Pictures/489a8b90-049b-4a2f-917e-d527e1d551a4_51326784973_o.jpg" alt="Profile Picture">
+    </div>
+    <div class="bio">
+      <h1>
+        <font size="-2">
+        <pre>
+
+
+ ██████╗██╗  ██╗██████╗ ██╗███████╗████████╗ ██████╗ ██████╗ ██╗  ██╗███████╗██████╗     ███╗   ███╗ ██████╗  ██████╗ ██████╗ ███████╗
+██╔════╝██║  ██║██╔══██╗██║██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗██║  ██║██╔════╝██╔══██╗    ████╗ ████║██╔═══██╗██╔═══██╗██╔══██╗██╔════╝
+██║     ███████║██████╔╝██║███████╗   ██║   ██║   ██║██████╔╝███████║█████╗  ██████╔╝    ██╔████╔██║██║   ██║██║   ██║██████╔╝█████╗
+██║     ██╔══██║██╔══██╗██║╚════██║   ██║   ██║   ██║██╔═══╝ ██╔══██║██╔══╝  ██╔══██╗    ██║╚██╔╝██║██║   ██║██║   ██║██╔══██╗██╔══╝
+╚██████╗██║  ██║██║  ██║██║███████║   ██║   ╚██████╔╝██║     ██║  ██║███████╗██║  ██║    ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝██║  ██║███████╗
+ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝    ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
+
+</pre></h1>
+<font size="+1">
+      <p>Bio text goes here...</p>
+    </div>
+  </header>
+
+  <main class="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="thumbnails">
+      <!-- Thumbnails for the photo gallery -->
+      <img src="photo1-thumb.jpg" alt="Thumbnail 1" onclick="openImage('photo1.jpg')">
+      <img src="photo2-thumb.jpg" alt="Thumbnail 2" onclick="openImage('photo2.jpg')">
+      <!-- Add more thumbnails as needed -->
+    </div>
+    <div class="full-image">
+      <!-- This will display the full-size image when clicked -->
+      <img src="" alt="Full Size Image" id="fullImg">
+    </div>
+  </main>
+
+  <script src="script.js"></script> <!-- Link your JavaScript file -->
+</body>
+</html>
