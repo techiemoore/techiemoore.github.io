@@ -5,6 +5,19 @@ body, h1, h2, p {
   color: white;
 }
 
+/* Define the custom font with @font-face */
+@font-face {
+  font-family: 'dos'; /* Name to refer to the font */
+  src: url('fonts/dos.ttf') format('ttf'); /* Path to the font file */
+}
+
+/* Apply the custom font globally */
+body {
+  font-family: 'CustomFont', Arial, sans-serif; /* Use the custom font as the first choice */
+}
+
+
+
 /* Profile header styles */
 .profile-header {
   display: flex;
