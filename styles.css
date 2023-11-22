@@ -41,7 +41,7 @@ header {
     margin: 5px;
 }
 
-.bio {
+.bio img {
 	max-width: 200px;
 	display: flex;
 	justify-content: center;
