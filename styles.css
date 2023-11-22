@@ -5,7 +5,6 @@
     font-family: 'dos';
     src: url('fonts/dos.woff2') format('woff2'),
          url('fonts/dos.ttf') format('truetype');
-    /* Add other formats (eot, ttf) if needed */
     font-weight: normal;
     font-style: normal;
 }
