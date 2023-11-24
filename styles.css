@@ -87,14 +87,13 @@ header {
 
 .profile-container {
   display: flex;
-  align-items: center;
-  justify-content: center; /* Center profile horizontally */
-  margin-bottom: 15px; /* Adjust margin between profile and button */
+  justify-content: center;
+  align-items: flex-start; /* Align items at the top */
 }
 
 .profile {
-  display: flex; /* Arrange profile image and bio horizontally */
-  align-items: center;
+  display: flex;
+  align-items: flex-start; /* Align items at the top */
 }
 
 .profile img {
@@ -108,49 +107,65 @@ header {
   max-width: 300px;
 }
 
+.bio-container {
+  flex: 1; /* Take remaining space */
+}
+
+/* Adjust the gallery button to align center */
 .button-container {
   display: flex;
   justify-content: center;
-  position: relative; /* Ensure proper z-index behavior */
-  z-index: 10; /* Set a higher z-index value */
+  margin-top: 20px;
 }
 
 .galleryButton {
-  padding: 10px 20px;
+  margin-top: 20px;
+  padding: 10px;
   border: 2px solid #ffb000;
   color: #ffb000;
   font-size: 16px;
   cursor: pointer;
   background: transparent;
+  font-family: 'dos';
 
   /* Center text horizontally and vertically */
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* Ensure proper z-index behavior */
+  z-index: 10; /* Set a higher z-index value */
 }
 
 .gallery {
   display: none;
   text-align: center;
   padding: 20px;
-  z-index: 10; /* Set a higher z-index value */
+  z-index: 10;
+  margin-top: 20px;
+  /* Additional styling to place the gallery images */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
+
 .gallery img {
-  max-width: 100%; /* Set maximum width to 100% of container */
+  max-width: 100%;
   height: auto;
   margin: 10px;
-  /* Add a max-width for images in the gallery */
-  max-width: 300px; /* Adjust this value as needed */
-
+  max-width: 300px;
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* Media queries for responsiveness */
 @media only screen and (max-width: 768px) {
-    header {
-        padding: 10px;
-    }
-    .profile img {
-        max-width: 150px;
-    }
+  header {
+    padding: 10px;
+  }
+  .profile img {
+    max-width: 150px;
+  }
 }
