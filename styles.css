@@ -93,7 +93,8 @@ header {
 
 .profile {
   display: flex;
-  align-items: flex-start; /* Align items at the top */
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .profile img {
@@ -103,12 +104,8 @@ header {
 }
 
 .bio {
-  margin: 0;
   max-width: 300px;
-}
-
-.bio-container {
-  flex: 1; /* Take remaining space */
+  flex: 1;
 }
 
 /* Adjust the gallery button to align center */
@@ -146,6 +143,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  order: 3; /* Display gallery below the profile section */
 }
 
 
@@ -154,10 +152,6 @@ header {
   height: auto;
   margin: 10px;
   max-width: 300px;
-  display: flex;
-  text-align: center;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 /* Media queries for responsiveness */
