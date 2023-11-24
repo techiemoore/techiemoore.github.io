@@ -10,7 +10,7 @@
 :root {
     --color-primary: 255 173 51;       /* Amber */
     --color-tertiary: 25 15 0;         /* Deep amber, almost black */
-    --stripes: repeating-linear-gradient(to bottom, #191000 0%, #191000 1px, transparent 1px, transparent 4px);
+    --stripes: repeating-linear-gradient(to bottom, #191000 0%, #191000 1px, transparent 1px, transparent 2.5px);
 }
 
 body::before {
@@ -41,7 +41,7 @@ body {
     font-family: 'dos', sans-serif;
     background-color: black;
     color: #ffb000;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 /* -- innner shadow */
@@ -115,11 +115,24 @@ header {
   z-index: 10; /* Set a higher z-index value */
 }
 
+.gallery-button {
+  padding: 10px 20px;
+  border: 2px solid #ffb000;
+  color: #ffb000;
+  font-size: 16px;
+  cursor: pointer;
+
+  /* Center text horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .gallery {
   display: none;
   text-align: center;
   padding: 20px;
+  z-index: 10; /* Set a higher z-index value */
 }
 
 .gallery img {
@@ -128,6 +141,7 @@ header {
   margin: 10px;
   /* Add a max-width for images in the gallery */
   max-width: 300px; /* Adjust this value as needed */
+
 }
 
 /* Media queries for responsiveness */

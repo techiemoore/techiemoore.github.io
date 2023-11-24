@@ -1,17 +1,17 @@
 // JavaScript to toggle gallery visibility
-const showGalleryBtn = document.getElementById('showGalleryBtn');
+const galleryButton = document.querySelector('.galleryButton');
 const gallery = document.getElementById('gallery');
 let galleryVisible = false; // Track gallery visibility
 
-showGalleryBtn.addEventListener('click', function() {
+galleryButton.addEventListener('click', function() {
   galleryVisible = !galleryVisible; // Toggle gallery visibility
   if (galleryVisible) {
     gallery.style.display = 'block';
     loadImages();
-    showGalleryBtn.textContent = 'Hide Gallery';
+    galleryButton.textContent = 'Hide Gallery';
   } else {
     gallery.style.display = 'none';
-    showGalleryBtn.textContent = 'Show Gallery';
+    galleryButton.textContent = 'Show Gallery';
   }
 });
 
