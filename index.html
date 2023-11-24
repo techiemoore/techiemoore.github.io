@@ -1,44 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
-<body class="crt-scanlines">
-
 <body>
-    <header>
-        <div class="profile">
-            <img src="Pictures/489a8b90-049b-4a2f-917e-d527e1d551a4_51326784973_o.jpg" alt="Profile Picture">
-        </div>
-        <div class="bio">
-            <img src="Header.png" alt="Name">
-            <p>Hello!<br>
-I am Christopher James Moore.<br>
-I have created this site to help people get to know me at a glance.<br>
 
-I enjoy building things: <br></p>
-
-
-  <div class="dropdown">
-    <button onclick="toggleGallery()" class="dropbtn">Gallery</button>
-    <div id="myDropdown" class="dropdown-content">
-      <img src="Pictures/20221004_120102_52451203335_o.jpg" alt="Image 1" onclick="openImage('Pictures/20221004_120102_52451203335_o.jpg')">
-      <img src="Pictures/20230724_175008_53069450409_o.jpg" alt="Image 2" onclick="openImage('Pictures/20230724_175008_53069450409_o.jpg')">
-      <!-- Add more images in a similar way -->
+  <header>
+    <div class="profile-container">
+      <div class="profile">
+        <img src="Pictures/489a8b90-049b-4a2f-917e-d527e1d551a4_51326784973_o.jpg" alt="Profile Picture">
+        <p class="bio">
+        Name: Christopher Moore<br>
+        Gender Identity: Male<br>
+        Location: Boston, MA<br>
+        </p>
+      </div>
     </div>
+    <div class="button-container">
+      <button id="showGalleryBtn">Show Gallery</button>
+    </div>
+  </header>
+  <div class="gallery" id="gallery">
+    <!-- Gallery images will be loaded here dynamically -->
   </div>
 
-  <div id="overlay" onclick="closeImage()"></div>
-  <div id="fullImageContainer">
-    <span class="close" onclick="closeImage()">&times;</span>
-    <img id="fullImage" src="" alt="Full Image">
-  </div>
-<div class="overlay"></div>
+
   <script src="script.js"></script>
 </body>
 </html>
-
