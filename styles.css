@@ -41,7 +41,7 @@ body {
     font-family: 'dos', sans-serif;
     background-color: black;
     color: #ffb000;
-    font-size: 20px;
+    font-size: 22px;
 }
 
 /* -- innner shadow */
@@ -79,7 +79,7 @@ body::after {
 }
 
 header {
-  padding: 50px;
+  padding: 40px;
 }
 
 .profile-container {
