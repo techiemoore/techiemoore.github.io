@@ -140,7 +140,7 @@ header {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
   z-index: 10;
 }
@@ -149,8 +149,8 @@ header {
   max-width: 100%;
   height: auto;
   width: 300px; /* Set a specific width for each image */
-  padding: 20px;
-  margin-top: 20px;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 
@@ -161,7 +161,7 @@ header {
   }
 
 .profile {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
   .profile img {
