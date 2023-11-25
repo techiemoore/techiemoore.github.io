@@ -10,7 +10,7 @@
 :root {
     --color-primary: 255 173 51;       /* Amber */
     --color-tertiary: 25 15 0;         /* Deep amber, almost black */
-    --stripes: repeating-linear-gradient(to bottom, #191000 0%, #191000 1px, transparent 1px, transparent 2.5px);
+    --stripes: repeating-linear-gradient(to bottom, #191000 0%, #191000 1px, transparent 1px, transparent 3px);
 }
 
 body::before {
@@ -79,9 +79,6 @@ body::after {
 }
 
 header {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
   padding: 50px;
 }
 
@@ -100,8 +97,9 @@ header {
 .profile img {
   max-width: 200px;
   margin-right: 20px;
-  filter: sepia(100%) hue-rotate(30deg) brightness(90%);
+  filter: hue-rotate(45deg) saturate(150%) brightness(0.8) sepia(100%);
 }
+
 
 .bio {
   max-width: 300px;
@@ -133,26 +131,27 @@ header {
   z-index: 10; /* Set a higher z-index value */
 }
 
-.gallery {
-  display: none;
-  text-align: center;
-  padding: 20px;
-  z-index: 10;
-  margin-top: 20px;
-  /* Additional styling to place the gallery images */
+.gallery-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  order: 3; /* Display gallery below the profile section */
+  margin-top: 50px;
 }
 
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  z-index: 10;
+}
 
 .gallery img {
   max-width: 100%;
   height: auto;
-  margin: 10px;
-  max-width: 300px;
+  width: 300px; /* Set a specific width for each image */
+  padding: 20px;
+  margin-top: 20px;
 }
+
 
 /* Media queries for responsiveness */
 @media only screen and (max-width: 768px) {
@@ -162,4 +161,9 @@ header {
   .profile img {
     max-width: 150px;
   }
+
+  .gallery {
+  width: 80%;
+  display: flex;
+}
 }
