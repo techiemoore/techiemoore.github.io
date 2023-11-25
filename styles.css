@@ -159,6 +159,11 @@ header {
   header {
     padding: 10px;
   }
+
+.profile {
+    margin-top: 15px;
+}
+
   .profile img {
     max-width: 150px;
   }
