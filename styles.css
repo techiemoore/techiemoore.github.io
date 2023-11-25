@@ -89,6 +89,7 @@ header {
 }
 
 .profile {
+  margin-top: 15px;
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
