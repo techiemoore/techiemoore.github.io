@@ -23,6 +23,7 @@ body::before {
     z-index: 1;
     inset: 0;
     pointer-events: none;
+    opacity: 0.55; /* Adjust the opacity as needed */
 }
 
 *, *:before, *:after {
