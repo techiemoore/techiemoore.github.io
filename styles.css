@@ -43,6 +43,7 @@ body {
     background-color: black;
     color: #f57908;
     font-size: 20px;
+    justify-content: center;
 }
 
 /* -- innner shadow */
@@ -80,34 +81,52 @@ body::after {
 }
 
 header {
-  padding: 40px;
+  padding: 20px;
+}
+
+.profile-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.profile-table tr {
+ border: 2px solid #f57908; /* Change the color and style as needed */
+}
+
+.profile-table td {
+  padding: 8px;
+  text-align: left;
+  border: 2px solid #f57908;
+  width: 100%'
 }
 
 .profile-container {
   display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Align items at the top */
+  align-items: flex-start;
+  width: 100%'
 }
 
 .profile {
   margin-top: 15px;
   display: flex;
-  align-items: flex-start;
+   align-items: center;
   flex-wrap: wrap;
+  width: 100%'
 }
 
 .profile img {
   max-width: 200px;
   margin-right: 20px;
+  padding: 10px;
+  color: #f57908;
 }
 
 
 .bio {
-  max-width: 300px;
   flex: 1;
+  align-items: center;
 }
 
-/* Adjust the gallery button to align center */
 .button-container {
   display: flex;
   justify-content: center;
