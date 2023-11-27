@@ -115,7 +115,7 @@ header {
 }
 
 .galleryButton {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 10px;
   border: 2px solid #f57908;
   color: #f57908;
@@ -134,7 +134,7 @@ header {
 
 .gallery-container {
   display: flex;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .gallery {
