@@ -10,7 +10,7 @@
 :root {
     --color-primary: 255 173 51;       /* Amber */
     --color-tertiary: 25 15 0;         /* Deep amber, almost black */
-    --stripes: repeating-linear-gradient(to bottom, #191000 0%, #191000 1px, transparent 1px, transparent 3px);
+    --stripes: repeating-linear-gradient(to bottom, #191000 0%, #191000 2px, transparent 2px, transparent 4px);
 }
 
 body::before {
@@ -18,7 +18,7 @@ body::before {
     position: fixed;
     inset: 0;
     background: var(--stripes);
-    background-size: 100% 5px; /* Adjusting the background size to space out the stripes */
+    background-size: 100% 20px; /* Adjusting the background size to space out the stripes */
     pointer-events: none;
     z-index: 1;
     inset: 0;
@@ -40,7 +40,7 @@ body {
     background-image: radial-gradient(circle at center, rgba(37, 22, 0, 0.6), rgba(25, 15, 0, 0.8) 50%, rgb(var(--color-tertiary)) 100%);
     font-family: 'dos', sans-serif;
     background-color: black;
-    color: #ffb000;
+    color: #f57908;
     font-size: 20px;
 }
 
@@ -116,8 +116,8 @@ header {
 .galleryButton {
   margin-top: 20px;
   padding: 10px;
-  border: 2px solid #ffb000;
-  color: #ffb000;
+  border: 2px solid #f57908;
+  color: #f57908;
   font-size: 16px;
   cursor: pointer;
   background: transparent;
