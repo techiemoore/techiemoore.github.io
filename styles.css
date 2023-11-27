@@ -160,11 +160,8 @@ header {
     padding: 10px;
   }
 
-.profile {
-    margin-top: 20px;
-}
-
   .profile img {
+    margin-top: 30px;
     max-width: 150px;
   }
 
