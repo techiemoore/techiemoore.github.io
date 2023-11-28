@@ -156,6 +156,7 @@ header {
     display: block;
     margin: 0 auto;
     padding: : 20px;
+    padding-bottom: 30px;
     max-width: 200px;
   }
 
@@ -169,9 +170,9 @@ header {
   }
 
   .gallery img {
-    max-width: calc(50% - 5px); /* Set the max-width for each image */
-    width: 100%; /* Ensure the image takes the entire available width */
-    padding: 5px; /* Adjust padding as needed */
+    width: calc(100% - 20px); /* Set the width for each image */
+    max-width: 100%; /* Ensure the image takes the entire available width */
+    padding: 10px; /* Adjust padding as needed */
     margin-top: 10px;
   }
 }
