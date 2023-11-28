@@ -104,9 +104,7 @@ function toggleFullSizeImageDisplay(imgElement, path) {
 }
 
 // Function to display full-size image
-function displayFullSizeImage(path, imgElement) {
-  // Open the image in a new window or modal, or perform any desired action
-  // For example, create a modal and show the clicked image inside it
+  function displayFullSizeImage(path, imgElement) {
   const modal = document.createElement('div');
   modal.classList.add('modal');
 
@@ -118,6 +116,8 @@ function displayFullSizeImage(path, imgElement) {
 
   imgElement.classList.add('full-size');
 
+  modal.style.zIndex = '10000';
+
   // Close modal when clicking outside the image
   modal.addEventListener('click', function(event) {
     if (event.target === modal) {
@@ -126,3 +126,4 @@ function displayFullSizeImage(path, imgElement) {
     }
   });
 }
+
