@@ -74,6 +74,8 @@ function loadImages() {
     'Pictures/wtavvym_51326802258_o.jpg',
     'Pictures/xfce-my-retro-ms-dos-theme-for-xubuntu_52017360277_o.jpg',
   ];
+  
+  
 const galleryContainer = document.getElementById('gallery');
   galleryContainer.innerHTML = '';
 
@@ -85,13 +87,24 @@ const galleryContainer = document.getElementById('gallery');
 
     // Add click event listener to each image
     img.addEventListener('click', function() {
-      displayFullSizeImage(path); // Function to display full-size image
+      toggleFullSizeImageDisplay(img, path); // Function to toggle full-size image display
     });
   });
 }
 
+// Function to toggle display of full-size image
+function toggleFullSizeImageDisplay(imgElement, path) {
+  const isDisplayed = imgElement.classList.contains('full-size');
+
+  if (!isDisplayed) {
+    displayFullSizeImage(path, imgElement);
+  } else {
+    imgElement.classList.remove('full-size');
+  }
+}
+
 // Function to display full-size image
-function displayFullSizeImage(path) {
+function displayFullSizeImage(path, imgElement) {
   // Open the image in a new window or modal, or perform any desired action
   // For example, create a modal and show the clicked image inside it
   const modal = document.createElement('div');
@@ -103,9 +116,12 @@ function displayFullSizeImage(path) {
   modal.appendChild(modalContent);
   document.body.appendChild(modal);
 
+  imgElement.classList.add('full-size');
+
   // Close modal when clicking outside the image
   modal.addEventListener('click', function(event) {
     if (event.target === modal) {
+      imgElement.classList.remove('full-size');
       modal.remove();
     }
   });
