@@ -82,3 +82,24 @@ function loadImages() {
     galleryContainer.appendChild(img);
   });
 }
+
+// Function to display full-size image
+function displayFullSizeImage(path) {
+  // You can create a modal or any other method to display the full-size image
+  // For example, create a modal and show the clicked image inside it
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+  
+  const modalContent = document.createElement('img');
+  modalContent.src = path;
+  
+  modal.appendChild(modalContent);
+  document.body.appendChild(modal);
+
+  // Close modal when clicking outside the image
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      modal.remove();
+    }
+  });
+}
