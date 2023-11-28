@@ -154,17 +154,12 @@ header {
   }
 
   .profile img {
-    align-items: center
+    align-items: center;
     margin-top: 30px;
     max-width: 150px;
   }
 
-  .bio {
-    max-width: 80%;
-  }
-
   .gallery {
-  width: 80%;
   display: flex;
 }
 }
