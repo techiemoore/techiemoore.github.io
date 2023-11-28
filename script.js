@@ -1,4 +1,3 @@
-// JavaScript to toggle gallery visibility
 const galleryButton = document.querySelector('.galleryButton');
 const gallery = document.getElementById('gallery');
 let galleryVisible = false; // Track gallery visibility
@@ -15,7 +14,7 @@ galleryButton.addEventListener('click', function() {
   }
 });
 
-// Function to load images dynamically (unchanged)
+// Function to load images dynamically
 function loadImages() {
   const imagePaths = [
     'Pictures/20221004_120102_52451203335_o.jpg',
