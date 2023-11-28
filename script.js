@@ -94,36 +94,6 @@ const galleryContainer = document.getElementById('gallery');
 
 // Function to toggle display of full-size image
 function toggleFullSizeImageDisplay(imgElement, path) {
-  const isDisplayed = imgElement.classList.contains('full-size');
-
-  if (!isDisplayed) {
-    displayFullSizeImage(path, imgElement);
-  } else {
-    imgElement.classList.remove('full-size');
-  }
-}
-
-// Function to display full-size image
-  function displayFullSizeImage(path, imgElement) {
-  const modal = document.createElement('div');
-  modal.classList.add('modal');
-
-  const modalContent = document.createElement('img');
-  modalContent.src = path;
-
-  modal.appendChild(modalContent);
-  document.body.appendChild(modal);
-
-  imgElement.classList.add('full-size');
-
-  modal.style.zIndex = '10000';
-
-  // Close modal when clicking outside the image
-  modal.addEventListener('click', function(event) {
-    if (event.target === modal) {
-      imgElement.classList.remove('full-size');
-      modal.remove();
-    }
-  });
+  window.open(path, '_blank'); // Open the image in a new tab/window
 }
 
