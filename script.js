@@ -1,8 +1,11 @@
+// JavaScript to toggle gallery visibility
 const galleryButton = document.querySelector('.galleryButton');
 const gallery = document.getElementById('gallery');
 let galleryVisible = false; // Track gallery visibility
 
-galleryButton.addEventListener('click', function() {
+galleryButton.addEventListener('click', toggleGallery);
+
+function toggleGallery() {
   galleryVisible = !galleryVisible; // Toggle gallery visibility
   if (galleryVisible) {
     gallery.style.display = 'block';
@@ -12,7 +15,7 @@ galleryButton.addEventListener('click', function() {
     gallery.style.display = 'none';
     galleryButton.textContent = 'Show Gallery';
   }
-});
+}
 
 // Function to load images dynamically
 function loadImages() {
@@ -71,27 +74,32 @@ function loadImages() {
     'Pictures/wtavvym_51326802258_o.jpg',
     'Pictures/xfce-my-retro-ms-dos-theme-for-xubuntu_52017360277_o.jpg',
   ];
-
-  const galleryContainer = document.getElementById('gallery');
+const galleryContainer = document.getElementById('gallery');
   galleryContainer.innerHTML = '';
 
   imagePaths.forEach(path => {
     const img = document.createElement('img');
     img.src = path;
+    img.classList.add('gallery-image'); // Add a class for easier selection
     galleryContainer.appendChild(img);
+
+    // Add click event listener to each image
+    img.addEventListener('click', function() {
+      displayFullSizeImage(path); // Function to display full-size image
+    });
   });
 }
 
 // Function to display full-size image
 function displayFullSizeImage(path) {
-  // You can create a modal or any other method to display the full-size image
+  // Open the image in a new window or modal, or perform any desired action
   // For example, create a modal and show the clicked image inside it
   const modal = document.createElement('div');
   modal.classList.add('modal');
-  
+
   const modalContent = document.createElement('img');
   modalContent.src = path;
-  
+
   modal.appendChild(modalContent);
   document.body.appendChild(modal);
 
