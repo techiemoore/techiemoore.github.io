@@ -55,31 +55,6 @@ body::after {
     z-index: 5;
 }
 
-.glares::before,
-.glares::after {
-    position: fixed;
-    content: '';
-    display: block;
-    filter: blur(20px);
-    border-radius: 2vw 2vw 10vw 10vw;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 40%, rgba(255, 255, 255, 0) 100%);
-    opacity: .15;
-    pointer-events: none;
-}
-
-.glares::before {
-    width: 80vw;
-    height: 25vh;
-}
-
-.glares::after {
-    width: 15vw;
-    height: 60vh;
-    right: 15vw;
-    top: 15vh;
-    filter: blur(50px);
-}
-
 header {
   padding: 20px;
 }
@@ -90,37 +65,34 @@ header {
 }
 
 .profile-table tr {
- border: 2px solid #f57908; /* Change the color and style as needed */
+ border: 3px solid #f57908; /* Change the color and style as needed */
 }
 
 .profile-table td {
-  padding: 8px;
+  padding: 7px;
+  padding-left: 10px;
   text-align: left;
-  border: 2px solid #f57908;
-  width: 100%'
+  border: 3px solid #f57908;
 }
 
 .profile-container {
   display: flex;
   align-items: flex-start;
-  width: 100%'
 }
 
 .profile {
   margin-top: 15px;
   display: flex;
-   align-items: center;
+  align-items: center;
   flex-wrap: wrap;
-  width: 100%'
+  border: 3px solid #f57908;
 }
 
 .profile img {
   max-width: 200px;
   margin-right: 20px;
   padding: 10px;
-  color: #f57908;
 }
-
 
 .bio {
   flex: 1;
@@ -136,7 +108,7 @@ header {
 .galleryButton {
   margin-top: 10px;
   padding: 10px;
-  border: 2px solid #f57908;
+  border: 3px solid #f57908;
   color: #f57908;
   font-size: 16px;
   cursor: pointer;
@@ -182,6 +154,10 @@ header {
   .profile img {
     margin-top: 30px;
     max-width: 150px;
+  }
+
+  .bio {
+    max-width: 80%;
   }
 
   .gallery {
