@@ -44,7 +44,6 @@ body {
     color: #f57908;
     font-size: 20px;
     justify-content: center;
-    border: 4px solid #f57908;
     margin: 20px;
 }
 
@@ -161,6 +160,18 @@ header {
   }
 
   .gallery {
-  display: flex;
-}
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: calc(100% - 40px); /* Adjust total width considering padding */
+    margin: 0 auto; /* Center the gallery */
+  }
+
+  .gallery img {
+    max-width: calc(50% - 5px); /* Set the max-width for each image */
+    width: 100%; /* Ensure the image takes the entire available width */
+    padding: 5px; /* Adjust padding as needed */
+    margin-top: 10px;
+  }
 }
