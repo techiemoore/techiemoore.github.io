@@ -7,66 +7,38 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <header>
-  <div class="profile-container">
-    <div class="profile">
-      <img src="Pictures/profile.jpg" alt="Profile Picture">
-      <div class="bio">
-        <table class="profile-table">
-          <tr>
-            <td>Name:</td>
-            <td>Christopher Moore</td>
-          </tr>
-          <tr>
-            <td>Gender:</td>
-            <td>Male</td>
-          </tr>
-          <tr>
-            <td>Location:</td>
-            <td>Boston, MA</td>
-          </tr>
-          <tr>
-            <td>Interests:</td>
-            <td>cyberpunk, tech, retrofuturism, chillwave, cassette futurism, Star Trek</td>
-          </tr>
-          <tr>
-            <td>Instagram:</td>
-            <td>2678.christopher</td>
-          </tr>
-        </table>
+    <div class="profile-container">
+      <div class="profile">
+        <img src="Pictures/profile.jpg" alt="Profile Picture">
+        <div class="bio">
+          <table class="profile-table">
+            <tr><td>Name:</td><td>Christopher Moore</td></tr>
+            <tr><td>Gender:</td><td>Male</td></tr>
+            <tr><td>Location:</td><td>Boston, MA</td></tr>
+            <tr><td>Interests:</td><td>cyberpunk, tech, retrofuturism, chillwave, cassette futurism, Star Trek</td></tr>
+            <tr><td>Instagram:</td><td>2678.christopher</td></tr>
+            <tr>
+              <td colspan="2" style="text-align:center; padding:0.5em;">
+                <a href="contact.html" class="contact-link">CONTACT</a>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="gallery-container">
-    <div class="gallery" id="gallery">
-      <!-- Gallery images will be loaded here dynamically -->
+    <div class="gallery-container">
+      <div class="gallery" id="gallery">
+        <!-- Gallery images will be loaded here -->
+      </div>
     </div>
-  </div>
-      <p><center>I also enjoy building things:</center></p>
-  <div class="button-container">
-    <button class="galleryButton">Show Gallery</button>
-  </div>
-</header>
+    <p style="text-align:center;">I also enjoy building things:</p>
+    <div class="button-container">
+      <button class="galleryButton">Show Gallery</button>
+    </div>
+  </header>
 
   <script src="script.js"></script>
-  
-  <section style="margin: 2em auto; max-width: 400px; text-align: center;">
-  <h2>Contact Me</h2>
-  <form action="https://formspree.io/f/xvgaqnav" method="POST">
-    <label for="email">Your Email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
-
-    <label for="message">Your Message:</label><br>
-    <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-    <!-- Honeypot field -->
-    <input type="text" name="_gotcha" style="display:none">
-
-    <button type="submit">Send</button>
-  </form>
-</section>
-
 </body>
-
 </html>
+
