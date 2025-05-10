@@ -50,6 +50,23 @@
 </header>
 
   <script src="script.js"></script>
+  
+  <section style="margin: 2em auto; max-width: 400px; text-align: center;">
+  <h2>Contact Me</h2>
+  <form action="https://formspree.io/f/xvgaqnav" method="POST">
+    <label for="email">Your Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="message">Your Message:</label><br>
+    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+    <!-- Honeypot field -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <button type="submit">Send</button>
+  </form>
+</section>
+
 </body>
 
 </html>
