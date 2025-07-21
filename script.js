@@ -20,6 +20,8 @@ function toggleGallery() {
 // Function to load images dynamically
 function loadImages() {
   const imagePaths = [
+    'Pictures/Laptop1.jpg'
+    'Pictures/Laptop2.jpg'
     'Pictures/PXL_20250323_160322465.jpg',
     'Pictures/7C3D60D1.png',
     'Pictures/90F0C5E6.png',
