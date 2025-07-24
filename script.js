@@ -28,7 +28,6 @@ function loadImages() {
     'Pictures/20221004_120102_52451203335_o.jpg',
     'Pictures/20230724_175008_53069450409_o.jpg',
     'Pictures/345395045_170564368972787_6665234763286219141_n.jpg',
-    'Pictures/355629772_244930084928187_1855928167094146817_n.jpg',
     'Pictures/fb_20150313_18_04_30_saved_picture_51326593041_o.jpg',
     'Pictures/fb_20150313_18_05_11_saved_picture_51326796233_o.jpg',
     'Pictures/fb_20150313_18_05_19_saved_picture_51326796243_o.jpg',
