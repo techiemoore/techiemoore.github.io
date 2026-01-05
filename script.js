@@ -1,23 +1,6 @@
-// JavaScript to toggle gallery visibility
-const galleryButton = document.querySelector('.galleryButton');
-const gallery = document.getElementById('gallery');
-let galleryVisible = false; // Track gallery visibility
+// Load images immediately when the script runs
+loadImages();
 
-galleryButton.addEventListener('click', toggleGallery);
-
-function toggleGallery() {
-  galleryVisible = !galleryVisible;
-  if (galleryVisible) {
-    gallery.style.display = 'block';
-    loadImages();
-    galleryButton.textContent = 'Hide Gallery';
-  } else {
-    gallery.style.display = 'none';
-    galleryButton.textContent = 'Show Gallery';
-  }
-}
-
-// Function to load images dynamically
 function loadImages() {
   const originalImagePaths = [
     'Pictures/Laptop1.jpg',
@@ -85,6 +68,7 @@ function loadImages() {
   originalImagePaths.forEach(originalPath => {
     const filename = originalPath.split('/').pop();
     const [name, ext] = filename.split('.');
+    // Ensure thumbnails exist or fallback to original if needed
     const thumbnailPath = `Thumbnails/${name}_thumb.${ext}`;
 
     const img = document.createElement('img');
