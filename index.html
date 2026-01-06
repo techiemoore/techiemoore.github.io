@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Christopher Moore | Prop Fabrication</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="profile-container">
-      <div class="profile">
-        <div class="bio">
-          <table class="profile-table">
-            <tr>
-              <td>NAME:</td>
-              <td><strong>Christopher Moore</strong></td>
-            </tr>
-            <tr>
-              <td>ROLE:</td>
-              <td>Prop Fabrication & Technical Support</td>
-            </tr>
-            <tr>
-              <td>SKILLS:</td>
-              <td>Custom Enclosures, SBC Integration (RPi/OrangePi), UI Theming, Wiring</td>
-            </tr>
-            <tr>
-              <td>LOCATION:</td>
-              <td>Boston, MA (Available for Local Over-Hire)</td>
-            </tr>
-            <tr>
-              <td>SPECIALTY:</td>
-              <td>Cassette Futurism, Functional "Hero" Props, Retro-Tech Aesthetics</td>
-            </tr>
-            <tr>
-              <td colspan="2" style="text-align:center; padding:0.5em;">
-                <a href="contact.html" class="contact-link">CONTACT</a>
-              </td>
-            </tr>
-          </table>
+  <main class="page">
+  
+    <section class="left-panel" aria-label="Profile">
+      <div class="panel-inner">
+        <table class="profile-table" role="presentation">
+          <tr>
+            <td>NAME:</td>
+            <td><strong>Christopher Moore</strong></td>
+          </tr>
+          <tr>
+            <td>ROLE:</td>
+            <td>Prop Fabrication &amp; Technical Support</td>
+          </tr>
+          <tr>
+            <td>SKILLS:</td>
+            <td>Custom Enclosures, SBC Integration (RPi/OrangePi), UI Theming, Wiring</td>
+          </tr>
+          <tr>
+            <td>LOCATION:</td>
+            <td>Boston, MA</td>
+          </tr>
+          <tr>
+            <td>SPECIALTY:</td>
+            <td>Cassette Futurism, Functional "Hero" Props, Retro-Tech Aesthetics</td>
+          </tr>
+        </table>
+
+        <div class="left-actions">
+          <a class="contact-link" href="contact.html">CONTACT</a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <h3 style="text-align:center; margin-top: 40px; color: rgb(var(--color-primary)); font-weight: normal; letter-spacing: 2px;">
-      MY WORK:
-    </h3>
-
-    <div class="gallery-container">
-      <div class="gallery" id="gallery">
-        </div>
-    </div>
-  </header>
+    <section class="right-panel" aria-label="Work Gallery">
+      <table class="gallery-table" role="presentation">
+        <tr>
+          <td class="gallery-title">GALLERY</td>
+        </tr>
+        <tr>
+          <td class="gallery-cell">
+            <div class="gallery" id="gallery"></div>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
