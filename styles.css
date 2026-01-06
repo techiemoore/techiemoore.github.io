@@ -75,7 +75,7 @@ body::after {
 
 /* ── Page Layout (index) ── */
 .page {
-  width: min(var(--maxw), calc(100% - 80px));
+  width: min(var(--maxw), calc(100% - 120px));
   margin: 70px auto 28px;
   display: grid;
   grid-template-columns: 40% 60%;
@@ -514,3 +514,4 @@ body.contact-page header { order: 2; }
   outline: none !important;
   box-shadow: none !important;
 }
+
