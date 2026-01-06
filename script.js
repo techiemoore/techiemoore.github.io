@@ -1,6 +1,7 @@
 
 (() => {
     const originalImagePaths = [
+    'Pictures/PXL_20250323_160322465.jpg',
     'Pictures/20221004_120102_52451203335_o.jpg',
     'Pictures/345395045_170564368972787_6665234763286219141_n.jpg',
     'Pictures/7C3D60D1.png',
