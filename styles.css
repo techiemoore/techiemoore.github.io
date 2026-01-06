@@ -9,7 +9,11 @@
 
 :root {
   --color-primary: 245 121 8;    /* #f57908 */
-  --color-tertiary: 25 15 0;     /* deep amber/black */
+  --color-tertiary: 25 15 0;
+
+  --maxw: 1680px;
+  --gap: 40px;
+
   --stripes: repeating-linear-gradient(
     to bottom,
     transparent 0px,
@@ -19,41 +23,17 @@
   );
 }
 
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after { box-sizing: border-box; }
 
-/* ── Base Layout ── */
+/* ── Base ── */
 html {
   position: relative;
   background-color: rgb(var(--color-tertiary));
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 20px;
-  background-image: radial-gradient(
-    circle at center,
-    rgba(37,22,0,0.6),
-    rgba(25,15,0,0.8) 50%,
-    rgb(var(--color-tertiary)) 100%
-  );
-  font-family: 'dos', sans-serif;
-  font-size: 20px;
-  line-height: 1.3;
-  color: rgb(var(--color-primary));
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  box-shadow: 0 0 20vh inset #000;
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* ── Scan‑lines Overlay ── */
+/* Scan-lines Overlay */
 html::after {
   content: '';
   position: fixed;
@@ -64,46 +44,79 @@ html::after {
   z-index: 9999;
 }
 
-/* ── Header & Profile ── */
-header {
-  padding: 20px;
-}
-
-.profile-container {
+body {
+  margin: 0;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
+
+  background-image: radial-gradient(
+    circle at center,
+    rgba(37,22,0,0.6),
+    rgba(25,15,0,0.8) 50%,
+    rgb(var(--color-tertiary)) 100%
+  );
+
+  font-family: 'dos', sans-serif;
+  font-size: 20px;
+  line-height: 1.3;
+  color: rgb(var(--color-primary));
 }
 
-.profile {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+/* Vignette */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  box-shadow: 0 0 20vh inset #000;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── Page Layout (index) ── */
+.page {
+  width: min(var(--maxw), calc(100% - 80px));
+  margin: 70px auto 28px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: var(--gap);
+  align-items: start;
+  position: relative;
   z-index: 1;
 }
 
-.profile img {
-  max-width: 200px;
-  margin-right: 20px;
-  padding: 10px;
+.page.single {
+  grid-template-columns: 1fr;
+  max-width: 900px;
 }
 
-.bio {
-  flex: 1;
+.left-panel,
+.right-panel { min-width: 0; }
+
+.panel-inner {
+  display: grid;
+  gap: 16px;
 }
 
-.profile-table {
+/* ── Tables (shared technique) ── */
+.profile-table,
+.gallery-table,
+.contact-table {
   width: 100%;
-  max-width: 800px;
   border-collapse: collapse;
 }
 
 .profile-table tr,
-.profile-table td {
+.profile-table td,
+.gallery-table tr,
+.gallery-table td,
+.contact-table td {
   border: 4px solid rgb(var(--color-primary));
 }
 
 .profile-table td {
   padding: 7px 10px;
+  vertical-align: top;
 }
 
 .profile-table a {
@@ -111,68 +124,300 @@ header {
   text-decoration: none;
 }
 
-/* ── Gallery Button ── */
-.gallery-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.galleryButton {
-  padding: 10px;
-  border: 4px solid rgb(var(--color-primary));
-  background: transparent;
-  color: rgb(var(--color-primary));
-  font-family: 'dos';
-  font-size: 20px;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-}
-
-/* ── Gallery Images ── */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
+/* ── Left actions ── */
+.left-actions {
+  display: grid;
   gap: 10px;
-  justify-content: center;
-  z-index: 1;
-  margin-top: 10px;
+  justify-items: center;
 }
 
-.gallery img {
-  width: 300px;
-  max-width: 100%;
-  padding: 10px;
+.microcopy {
+  font-size: 16px;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
+  text-align: center;
 }
 
-/* ── Click‑through Fix ── */
-header * {
-  pointer-events: none;
+/* ── Gallery Table Header ── */
+.gallery-title {
+  background: rgb(var(--color-primary));
+  text-align: center;
+
+  /* Match profile row sizing */
+  padding: 7px 10px;
+  font-size: 21px;
+  line-height: 1.3;
+  color: black;
 }
 
-.profile-table a,
-.galleryButton,
-.gallery * ,
-form,
-form * {
-  pointer-events: auto;
+.gallery-cell {
+  padding: 0;
+  vertical-align: top;
+}
+
+/* ── Primary button ── */
+.contact-link {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.45em 0.95em;
+  background: rgb(var(--color-primary));
+  color: black !important;
+  border: none;
+  text-decoration: none;
+  box-shadow: 0 0 18px rgba(0,0,0,0.65);
+}
+
+/* ── Gallery / Carousel ── */
+.gallery {
   position: relative;
+  width: 100%;
+  height: clamp(420px, 55vh, 640px);
+  margin-top: 0;
   z-index: 1;
 }
 
-/* ── Contact‑page Form Table ── */
-.contact-table {
+.gallery .carousel-viewport {
+  position: relative;
   width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  --nav-w: 84px;
+  padding: 0; /* nav buttons overlay inside the box */
+}
+
+.gallery .carousel-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Nav buttons */
+.carousel-nav-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--nav-w);
+
+  border: none;
+  padding: 0;
+  margin: 0;
+
+  color: rgb(var(--color-primary));
+  font-family: 'dos', sans-serif;
+  font-size: 42px;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  user-select: none;
+  background: transparent;
+  z-index: 200;
+
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.carousel-nav-left {
+  left: 0;
+  justify-content: flex-start;
+  padding-left: 16px;
+}
+
+.carousel-nav-right {
+  right: 0;
+  justify-content: flex-end;
+  padding-right: 16px;
+}
+
+/* Cards */
+.gallery .carousel-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 260px;
+  height: 380px;
+
+  transform: translate(-50%, -50%) translateX(var(--x, 0px)) scale(var(--s, 1));
+  opacity: 1;
+  z-index: var(--z, 1);
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gallery .carousel-card.is-center {
+  height: 100%;
+  width: min(70%, 520px);
+}
+
+.gallery .carousel-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+
+  /* letterbox fill (no edge artifacts) */
+  background: rgba(0,0,0,0.55);
+}
+
+.gallery .carousel-card.is-center .carousel-frame {
+  background: transparent;
+  box-shadow: 0 0 18px rgba(0,0,0,0.75);
+}
+
+.gallery .carousel-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+
+  filter: brightness(1);
+}
+
+/* Non-center images: ~50% darker */
+.gallery .carousel-card:not(.is-center) img {
+  filter: brightness(0.5);
+}
+
+/* Broken image handling (optional JS support) */
+.gallery .carousel-card img[aria-broken="true"] { opacity: 0; }
+.gallery .carousel-card img[aria-broken="true"] + .broken-badge { display: flex; }
+
+.gallery .broken-badge {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed rgba(var(--color-primary), 0.55);
+  color: rgba(var(--color-primary), 0.8);
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* Kill focus rings */
+.gallery .carousel-card:focus,
+.gallery .carousel-card:focus-visible,
+.gallery .carousel-nav-btn:focus,
+.gallery .carousel-nav-btn:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.95);
+  z-index: 11000;
+}
+
+.lightbox.is-open { display: flex; }
+
+.lightbox-inner {
+  position: relative;
+  border: 4px solid rgb(var(--color-primary));
+  padding: 10px;
+  background: rgba(0,0,0,0.8);
+  box-shadow: 0 0 40px rgba(0,0,0,0.8);
+  max-width: 95vw;
+  max-height: 90vh;
+}
+
+.lightbox-inner img {
+  display: block;
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+
+  border: none;
+  background: rgba(0,0,0,0.8);
+  color: rgb(var(--color-primary));
+  font-family: 'dos', sans-serif;
+  font-size: 30px;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  user-select: none;
+
+  z-index: 10;
+  box-shadow: 0 0 22px rgba(0,0,0,1);
+}
+
+.lightbox-nav-left  { left: -80px; }
+.lightbox-nav-right { right: -80px; }
+
+.lightbox-nav-btn:hover {
+  background: rgb(var(--color-primary));
+  color: black;
+}
+
+.lightbox-hint {
+  text-align: center;
+  margin-top: 10px;
+  color: rgb(var(--color-primary));
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+
+/* ── Contact page restores ── */
+
+/* Click-through fix (safe even if you don’t use <header> on index) */
+header * { pointer-events: none; }
+.profile-table a,
+.contact-link,
+.gallery *,
+form,
+form * { pointer-events: auto; }
+
+/* Contact form table + inputs */
+.contact-table {
   max-width: 800px;
   margin: 2em auto;
-  border-collapse: collapse;
 }
 
-.contact-table td {
-  border: 4px solid rgb(var(--color-primary));
-  padding: 7px 10px;
-}
+.contact-table td { padding: 7px 10px; }
 
 .contact-table input,
 .contact-table textarea {
@@ -180,79 +425,92 @@ form * {
   background: transparent;
   border: none;
   color: rgb(var(--color-primary));
-  font-family: 'dos';
+  font-family: 'dos', sans-serif;
   font-size: 1em;
 }
 
-.contact-table textarea {
-  resize: vertical;
-}
-
-.contact-table tr:last-child td {
-  text-align: center;
-}
+.contact-table textarea { resize: vertical; }
+.contact-table tr:last-child td { text-align: center; }
 
 .contact-table button {
   background: rgb(var(--color-primary));
   color: black;
   border: none;
   padding: 0.6em 1.2em;
-  font-family: 'dos';
+  font-family: 'dos', sans-serif;
   font-size: 1em;
   cursor: pointer;
 }
 
-/* ── ASCII‑banner & Contact‑page Layout ── */
+/* ASCII banner rendering */
 pre.ascii-banner {
   font-size: 10px;
   line-height: 10px;
   -webkit-font-smoothing: none;
   text-rendering: optimizeSpeed;
+  
+
 }
 
-
-
+/* Contact page layout + spacing restore */
 body.contact-page {
+  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-body.contact-page pre.ascii-banner {
-  order: 1;
+body.contact-page pre.ascii-banner { order: 1; }
+body.contact-page header { order: 2; }
+
+/* ── Responsive ── */
+@media (max-width: 980px) {
+  .page {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .right-panel { order: 1; }
+  .left-panel  { order: 2; }
+
+  .gallery { height: 420px; }
 }
 
-body.contact-page header {
-  order: 2;
-}
-
-/* ── Mobile ── */
 @media (max-width: 768px) {
-  .profile img {
-    display: block;
-    margin: 0 auto 30px;
+  .gallery { height: 360px; }
+  .gallery .carousel-viewport { --nav-w: 62px; }
+  .carousel-nav-btn { font-size: 32px; }
+
+  .gallery .carousel-card {
+    width: 210px;
+    height: 270px;
   }
-  .gallery img {
-    width: calc(100% - 20px);
+
+  .gallery .carousel-card.is-center {
+    width: min(82%, 420px);
+    height: 100%;
   }
-}
 
-/* center the “Show Gallery” button again */
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1em;
-}
-
-/* highlight CONTACT with amber background + black text */
-.contact-link {
-  display: inline-block;
-  padding: 0.4em 0.8em;
-  background: rgb(var(--color-primary));
-  color: black !important;
-  border: 4px solid rgb(var(--color-primary));
-  text-decoration: none;
+  .lightbox-nav-left  { left: 10px; }
+  .lightbox-nav-right { right: 10px; }
 }
 
 
+/* --- HARD KILL: any outlines/borders/shadows around carousel images --- */
+.gallery .carousel-card,
+.gallery .carousel-frame,
+.gallery .carousel-card img {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
 
+/* Also kill browser focus rings (can appear as dark outlines) */
+.gallery .carousel-card:focus,
+.gallery .carousel-card:focus-visible,
+.gallery .carousel-nav-btn:focus,
+.gallery .carousel-nav-btn:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
