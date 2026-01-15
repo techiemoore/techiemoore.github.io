@@ -1,5 +1,5 @@
 import os
-from PIL import Image
+from PIL import Image, ImageOps
 
 def create_thumbnails(input_dir, output_dir, size=(400, 400), jpeg_quality=90):
     """
@@ -14,6 +14,7 @@ def create_thumbnails(input_dir, output_dir, size=(400, 400), jpeg_quality=90):
             input_path = os.path.join(input_dir, filename)
             try:
                 with Image.open(input_path) as img:
+                    img = ImageOps.exif_transpose(img)
                     original_format = img.format
                     name, ext = os.path.splitext(filename)
 
