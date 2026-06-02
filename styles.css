@@ -47,18 +47,18 @@ body {
     );
 }
 
-/* ── Outer row: nav + main column ── */
+/* ── Outer column: banner, then nav + table row ── */
 .outer-wrap {
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  flex-direction: column;
   margin: 20px 48px 0;
 }
 
-.main-column {
-  flex: 1;
+.content-row {
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 /* ── Nav pane ── */
@@ -114,7 +114,8 @@ body {
 
 /* ── Outer encasement (the "table") ── */
 .table-wrap {
-  margin: 20px 0 0;
+  flex: 1;
+  margin: 0;
   border: 1px solid var(--accent);
 }
 
