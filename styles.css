@@ -49,7 +49,7 @@ body {
 
 /* ── Banner ── */
 .banner {
-  width: 100%;
+  margin: 20px 28px 0;
   background: var(--banner);
   padding: 14px 32px;
   display: flex;
@@ -74,7 +74,7 @@ body {
 
 /* ── Outer encasement (the "table") ── */
 .table-wrap {
-  margin: 20px 28px 0;
+  margin: 0 28px 0;
   border: 1px solid var(--accent);
   height: calc(50vh - 80px);
   overflow: visible;
