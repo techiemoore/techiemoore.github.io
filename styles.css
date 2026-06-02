@@ -54,7 +54,7 @@ body {
   padding: 14px 32px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 4px;
 }
 
@@ -74,7 +74,7 @@ body {
 
 /* ── Outer encasement (the "table") ── */
 .table-wrap {
-  margin: 8px 28px 0;
+  margin: 20px 28px 0;
   border: 1px solid var(--accent);
 }
 
@@ -166,10 +166,11 @@ body {
   align-items: center;
   justify-content: flex-start;
   padding: 4px;
+  padding-left: 32px;
 }
 
 .pane-2-image img {
   display: block;
-  height: 72vh;
+  height: 86vh;
   width: auto;
 }
