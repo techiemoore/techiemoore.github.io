@@ -217,7 +217,7 @@ body {
 }
 
 .pane-2-text {
-  flex: 0 0 42%;
+  flex: 0 0 50%;
   padding: 30px 40px;
   display: flex;
   flex-direction: column;
@@ -252,8 +252,9 @@ body {
 
 .pane-2-image img {
   display: block;
-  height: 52vh;
+  height: 65vh;
   width: auto;
-  transform: scale(1.5);
-  transform-origin: left center;
+  transform: scale(1.2);
+  transform-origin: left;
+  margin-bottom: 50px;
 }
