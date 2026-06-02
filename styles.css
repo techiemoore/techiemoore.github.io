@@ -33,6 +33,9 @@ body {
   padding: 20px 48px 0;
   font-family: 'Michroma', sans-serif;
   color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   background-color: var(--bg);
   background-image:
     repeating-linear-gradient(
@@ -93,7 +96,7 @@ body {
     linear-gradient(to bottom, var(--accent), var(--accent))
       100% var(--cut) / 1px calc(100% - var(--cut)) no-repeat,
     /* diagonal cut line */
-    linear-gradient(to bottom right,
+    linear-gradient(to bottom left,
       transparent calc(50% - 0.7px),
       var(--accent) calc(50% - 0.7px),
       var(--accent) calc(50% + 0.7px),
