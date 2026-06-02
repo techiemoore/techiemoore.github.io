@@ -116,7 +116,8 @@ body {
   white-space: nowrap;
 }
 
-.nav-btn:hover {
+.nav-btn:hover,
+.nav-btn.active {
   background: #ff5032;
   color: black;
 }
@@ -156,6 +157,81 @@ body {
   overflow-x: visible;
   scrollbar-width: thin;
   scrollbar-color: var(--accent) transparent;
+}
+
+/* ── View switching ── */
+.view {
+  display: none;
+}
+.view.active {
+  display: block;
+}
+
+/* ── Contact view ── */
+.contact-view {
+  padding: 40px 48px;
+  max-width: 640px;
+}
+
+.contact-heading {
+  font-size: 1.1rem;
+  font-weight: normal;
+  letter-spacing: 0.18em;
+  color: var(--text);
+  margin-bottom: 32px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-field label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+
+.contact-field input,
+.contact-field textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--accent);
+  color: var(--text);
+  font-family: 'Michroma', sans-serif;
+  font-size: 0.85rem;
+  padding: 8px 0;
+  outline: none;
+  resize: vertical;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-bottom-color: var(--text);
+}
+
+.contact-submit {
+  align-self: flex-start;
+  padding: 12px 36px;
+  background: #ff8728;
+  color: black;
+  border: none;
+  font-family: 'Michroma', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.contact-submit:hover {
+  background: #ff5032;
 }
 
 /* ── Pane row ── */
