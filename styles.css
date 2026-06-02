@@ -96,25 +96,23 @@ body {
 /* ── Pane 1: label column ── */
 .pane-1 {
   flex: 0 0 auto;
-  align-self: flex-start;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 20px 18px 32px;
-  background: #dfcfb8;
+  padding: 20px 18px;
 }
 
 .pane-number {
   font-size: 4rem;
   line-height: 1;
   letter-spacing: -0.02em;
-  color: #1e1003;
+  color: var(--text);
 }
 
 .pane-label {
   font-size: 0.7rem;
   letter-spacing: 0.1em;
-  color: #1e1003;
+  color: var(--text);
   white-space: nowrap;
   margin-top: 6px;
   text-align: right;
@@ -139,7 +137,7 @@ body {
 
 .pane-2-text {
   flex: 0 0 42%;
-  padding: 18px 16px;
+  padding: 30px 40px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -167,9 +165,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 4px;
-  padding-left: 32px;
-  padding-top: 24px;
+  padding: 0;
 }
 
 .pane-2-image img {
