@@ -49,7 +49,7 @@ body {
 
 /* ── Banner ── */
 .banner {
-  margin: 20px 28px 0;
+  margin: 20px 48px 0;
   background: var(--banner);
   padding: 14px 32px;
   display: flex;
@@ -74,7 +74,7 @@ body {
 
 /* ── Outer encasement (the "table") ── */
 .table-wrap {
-  margin: 20px 28px 0;
+  margin: 20px 48px 0;
   border: 1px solid var(--accent);
 }
 
@@ -96,10 +96,11 @@ body {
 /* ── Pane 1: label column ── */
 .pane-1 {
   flex: 0 0 auto;
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 20px 18px;
+  padding: 20px 18px 32px;
   background: #dfcfb8;
 }
 
@@ -164,10 +165,11 @@ body {
 .pane-2-image {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   padding: 4px;
   padding-left: 32px;
+  padding-top: 24px;
 }
 
 .pane-2-image img {
