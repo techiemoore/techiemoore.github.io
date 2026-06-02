@@ -69,15 +69,36 @@ body {
 
 /* ── Nav pane ── */
 .nav-pane {
+  --cut: 20px;
   flex: 0 0 auto;
-  align-self: stretch;
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  border: 1px solid var(--accent);
   padding: 14px;
   margin-right: 4px;
-  overflow: hidden;
+  position: relative;
+  /* Cut-corner border via background gradients */
+  background:
+    /* top edge — stops before the cut */
+    linear-gradient(to right, var(--accent), var(--accent))
+      0 0 / calc(100% - var(--cut)) 1px no-repeat,
+    /* left edge — full height */
+    linear-gradient(to bottom, var(--accent), var(--accent))
+      0 0 / 1px 100% no-repeat,
+    /* bottom edge — full width */
+    linear-gradient(to right, var(--accent), var(--accent))
+      0 100% / 100% 1px no-repeat,
+    /* right edge — starts below the cut */
+    linear-gradient(to bottom, var(--accent), var(--accent))
+      100% var(--cut) / 1px calc(100% - var(--cut)) no-repeat,
+    /* diagonal cut line */
+    linear-gradient(to bottom right,
+      transparent calc(50% - 0.7px),
+      var(--accent) calc(50% - 0.7px),
+      var(--accent) calc(50% + 0.7px),
+      transparent calc(50% + 0.7px)
+    ) 100% 0 / var(--cut) var(--cut) no-repeat;
 }
 
 .nav-btn {
