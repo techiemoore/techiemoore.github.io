@@ -457,6 +457,7 @@ body {
   .pane-2-image {
     justify-content: center;
     padding: 16px 0;
+    order: -1;
   }
 
   .pane-2-image img {
