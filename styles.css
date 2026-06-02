@@ -334,3 +334,177 @@ body {
   transform-origin: left;
   margin-bottom: 50px;
 }
+
+/* ────────────────────────────────────────────
+   Responsive
+──────────────────────────────────────────── */
+
+/* ── Medium: tighten spacing ── */
+@media (max-width: 1100px) {
+  body {
+    padding: 16px 28px 0;
+  }
+
+  .nav-btn {
+    padding: 14px 24px;
+    font-size: 0.78rem;
+  }
+
+  .pane-2-text {
+    padding: 24px 28px;
+    font-size: 0.82rem;
+  }
+
+  .pane-number {
+    font-size: 3rem;
+  }
+}
+
+/* ── Tablet: break to vertical scroll, stack nav above table ── */
+@media (max-width: 768px) {
+  html {
+    height: auto;
+    overflow: auto;
+  }
+
+  body {
+    height: auto;
+    overflow: auto;
+    padding: 14px 20px 40px;
+  }
+
+  .outer-wrap {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .content-row {
+    flex-direction: column;
+    flex: none;
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  /* Nav becomes a horizontal row of buttons */
+  .nav-pane {
+    flex-direction: row;
+    align-self: stretch;
+    padding: 12px;
+    gap: 10px;
+    /* Simplify to regular border on horizontal layout */
+    background:
+      linear-gradient(to right, var(--accent), var(--accent))
+        0 0 / 100% 1px no-repeat,
+      linear-gradient(to bottom, var(--accent), var(--accent))
+        0 0 / 1px 100% no-repeat,
+      linear-gradient(to right, var(--accent), var(--accent))
+        0 100% / 100% 1px no-repeat,
+      linear-gradient(to bottom, var(--accent), var(--accent))
+        100% 0 / 1px 100% no-repeat;
+  }
+
+  .table-wrap {
+    overflow-y: visible;
+    overflow-x: visible;
+    min-height: 0;
+    flex: none;
+  }
+
+  /* Cards stack vertically */
+  .layout {
+    flex-direction: column;
+  }
+
+  .pane + .pane {
+    border-left: none;
+    border-top: 1px solid var(--accent);
+  }
+
+  .pane-1 {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+  }
+
+  .pane-number {
+    font-size: 2.5rem;
+  }
+
+  .pane-label {
+    margin-top: 0;
+    text-align: left;
+  }
+
+  /* Pane 2: text above image */
+  .pane-2 {
+    flex-direction: column;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.88) 70%,
+      transparent 100%
+    );
+  }
+
+  .pane-2-text {
+    flex: none;
+    width: 100%;
+    padding: 20px 20px;
+    font-size: 0.8rem;
+  }
+
+  .pane-2-image {
+    justify-content: center;
+    padding: 16px 0;
+  }
+
+  .pane-2-image img {
+    height: auto;
+    width: 80%;
+    max-width: 420px;
+    transform: none;
+    margin-bottom: 0;
+  }
+}
+
+/* ── Mobile: single column, minimal chrome ── */
+@media (max-width: 480px) {
+  body {
+    padding: 10px 12px 32px;
+  }
+
+  .banner {
+    padding: 12px 16px;
+  }
+
+  .banner-name {
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+  }
+
+  .nav-btn {
+    padding: 12px 16px;
+    font-size: 0.7rem;
+    flex: 1;
+    text-align: center;
+  }
+
+  .pane-number {
+    font-size: 2rem;
+  }
+
+  .pane-2-text {
+    padding: 16px;
+    font-size: 0.75rem;
+  }
+
+  .pane-2-image img {
+    width: 100%;
+    max-width: none;
+  }
+
+  .contact-view {
+    padding: 24px 16px;
+  }
+}
