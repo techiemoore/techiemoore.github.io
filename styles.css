@@ -1,7 +1,7 @@
 /* ── Font ── */
 @font-face {
-  font-family: 'Eurostile';
-  src: url('fonts/EurostileOblique.otf') format('opentype');
+  font-family: 'Michroma';
+  src: url('fonts/Michroma-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -11,6 +11,8 @@
   --bg:     #1e1003;
   --accent: #c15c15;
   --text:   #DFCFB8;
+  --banner: #dfcfb8;
+  --a2e:    #ff5032;
   --cell:   50px;
 }
 
@@ -25,7 +27,7 @@ html, body {
 }
 
 body {
-  font-family: 'Eurostile', sans-serif;
+  font-family: 'Michroma', sans-serif;
   color: var(--text);
   background-color: var(--bg);
   background-image:
@@ -43,14 +45,46 @@ body {
       transparent 1px,
       transparent var(--cell)
     );
+}
+
+/* ── Banner ── */
+.banner {
+  width: 100%;
+  background: var(--banner);
+  padding: 14px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.banner-name {
+  font-family: 'Michroma', sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.18em;
+  color: #1e1003;
+}
+
+.banner-sub {
+  font-family: 'Michroma', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: #1e1003;
+}
+
+/* ── Outer encasement (the "table") ── */
+.table-wrap {
+  margin: 20px 28px 0;
+  border: 1px solid var(--accent);
+  height: calc(50vh - 80px);
   overflow: hidden;
 }
 
-/* ── Three-pane layout ── */
+/* ── Pane row ── */
 .layout {
   display: flex;
-  height: 100vh;
   width: 100%;
+  height: 100%;
 }
 
 .pane {
@@ -62,48 +96,85 @@ body {
   border-left: 1px solid var(--accent);
 }
 
-/* ── Pane 1: shrink to fit label content ── */
+/* ── Pane 1: label column ── */
 .pane-1 {
   flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 32px 24px;
+  padding: 20px 18px;
 }
 
 .pane-number {
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 1;
   letter-spacing: -0.02em;
   color: var(--text);
 }
 
 .pane-label {
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
   color: var(--text);
   white-space: nowrap;
-  margin-top: 8px;
+  margin-top: 6px;
   text-align: right;
 }
 
-/* ── Pane 2: image, fills remaining space ── */
+.a2e {
+  color: var(--a2e);
+}
+
+/* ── Pane 2: text + image ── */
 .pane-2 {
+  flex: 1;
+  display: flex;
+  height: 100%;
+}
+
+.pane-2-text {
+  flex: 0 0 42%;
+  padding: 18px 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.6rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.88) 65%,
+    transparent 100%
+  );
+}
+
+.pane-2-text h4 {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: var(--a2e);
+  font-weight: normal;
+}
+
+.pane-2-text .subtitle {
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+  margin-top: -6px;
+}
+
+.pane-2-image {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 12px;
 }
 
-.pane-2 img {
+.pane-2-image img {
   display: block;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-}
-
-/* ── Pane 3: empty placeholder ── */
-.pane-3 {
-  flex: 0 0 160px;
 }
