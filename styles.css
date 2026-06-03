@@ -155,8 +155,11 @@ body {
   border: 1px solid var(--accent);
   overflow-y: auto;
   overflow-x: visible;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent) transparent;
+  scrollbar-width: none;
+}
+
+.table-wrap::-webkit-scrollbar {
+  display: none;
 }
 
 /* ── View switching ── */
