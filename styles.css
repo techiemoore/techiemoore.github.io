@@ -331,23 +331,6 @@ body {
   border-top: 1px solid var(--accent);
 }
 
-.pane-2-flip {
-  flex-direction: row-reverse;
-  background: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.88) 0%,
-    rgba(0, 0, 0, 0.88) 44%,
-    transparent 60%
-  );
-}
-
-.pane-2-image-flip {
-  justify-content: flex-end;
-}
-
-.pane-2-image-flip img {
-  transform-origin: right;
-}
 
 /* ────────────────────────────────────────────
    Responsive
@@ -463,24 +446,6 @@ body {
     order: -1;
   }
 
-  .pane-2-flip {
-    flex-direction: column;
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.88) 0%,
-      rgba(0, 0, 0, 0.88) 70%,
-      transparent 100%
-    );
-  }
-
-  .pane-2-image-flip {
-    justify-content: center;
-    order: -1;
-  }
-
-  .pane-2-image-flip img {
-    transform-origin: center;
-  }
 
   .pane-2-image img {
     height: auto;
