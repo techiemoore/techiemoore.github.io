@@ -23,13 +23,11 @@
 }
 
 html {
-  height: 100%;
-  overflow: hidden;
+  height: auto;
 }
 
 body {
-  height: 100%;
-  overflow: hidden;
+  height: auto;
   padding: 20px 48px 0;
   font-family: 'Michroma', sans-serif;
   color: var(--text);
@@ -58,7 +56,6 @@ body {
 .outer-wrap {
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .content-row {
@@ -66,8 +63,6 @@ body {
   align-items: flex-start;
   gap: 20px;
   margin-top: 20px;
-  flex: 1;
-  min-height: 0;
 }
 
 /* ── Nav pane ── */
@@ -150,16 +145,9 @@ body {
 /* ── Outer encasement (the "table") ── */
 .table-wrap {
   flex: 1;
-  min-height: 0;
   margin: 0;
   border: 1px solid var(--accent);
-  overflow-y: auto;
-  overflow-x: visible;
-  scrollbar-width: none;
-}
-
-.table-wrap::-webkit-scrollbar {
-  display: none;
+  overflow: visible;
 }
 
 /* ── View switching ── */
@@ -388,19 +376,11 @@ body {
 
 /* ── Tablet: break to vertical scroll, stack nav above table ── */
 @media (max-width: 768px) {
-  html {
-    height: auto;
-    overflow: auto;
-  }
-
   body {
-    height: auto;
-    overflow: auto;
     padding: 14px 20px 40px;
   }
 
   .outer-wrap {
-    height: auto;
     min-height: 100vh;
   }
 
@@ -430,9 +410,6 @@ body {
   }
 
   .table-wrap {
-    overflow-y: visible;
-    overflow-x: visible;
-    min-height: 0;
     flex: none;
   }
 
