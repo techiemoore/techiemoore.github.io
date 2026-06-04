@@ -341,9 +341,10 @@ body {
 }
 
 .card-02 .pane-2-image img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
+  height: auto;
+  max-height: 65vh;
+  width: auto;
+  max-width: 100%;
   transform: none;
   margin-bottom: 0;
 }
@@ -364,9 +365,10 @@ body {
 }
 
 .card-03 .pane-2-image img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
+  height: auto;
+  max-height: 65vh;
+  width: auto;
+  max-width: 100%;
   transform: none;
   margin-bottom: 0;
 }
