@@ -349,6 +349,28 @@ body {
 }
 
 
+/* ── Card 03 ── */
+.card-03 {
+  border-top: 1px solid var(--accent);
+}
+
+.card-03 .pane-2 {
+  overflow: hidden;
+}
+
+.card-03 .pane-2-image {
+  overflow: hidden;
+  align-items: center;
+}
+
+.card-03 .pane-2-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  transform: none;
+  margin-bottom: 0;
+}
+
 /* ────────────────────────────────────────────
    Responsive
 ──────────────────────────────────────────── */
