@@ -313,7 +313,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0;
+  padding: 20px 0 0 0;
   overflow: visible;
 }
 
@@ -337,7 +337,6 @@ body {
 
 .card-02 .pane-2-image {
   overflow: hidden;
-  align-items: center;
 }
 
 .card-02 .pane-2-image img {
@@ -361,7 +360,6 @@ body {
 
 .card-03 .pane-2-image {
   overflow: hidden;
-  align-items: center;
 }
 
 .card-03 .pane-2-image img {
