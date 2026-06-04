@@ -225,6 +225,35 @@ body {
   background: #ff5032;
 }
 
+/* ── About view ── */
+.about-view {
+  padding: 40px 48px;
+  max-width: 720px;
+}
+
+.about-heading {
+  font-size: 1.1rem;
+  font-weight: normal;
+  letter-spacing: 0.18em;
+  color: var(--text);
+  margin-bottom: 32px;
+}
+
+.about-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.about-lead {
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
 /* ── Pane row ── */
 .layout {
   display: flex;
