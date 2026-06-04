@@ -303,7 +303,7 @@ body {
   flex: 1;
   display: flex;
   align-items: stretch;
-  overflow: visible;
+  overflow: hidden;
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.88) 0%,
@@ -343,16 +343,14 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   padding: 20px 0 0 0;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .pane-2-image img {
   display: block;
-  height: 65vh;
+  max-height: 65vh;
   width: auto;
-  transform: scale(1.2);
-  transform-origin: left;
-  margin-bottom: 50px;
+  max-width: 100%;
 }
 
 /* ── Card 02 ── */
@@ -360,22 +358,6 @@ body {
   border-top: 1px solid var(--accent);
 }
 
-.card-02 .pane-2 {
-  overflow: hidden;
-}
-
-.card-02 .pane-2-image {
-  overflow: hidden;
-}
-
-.card-02 .pane-2-image img {
-  height: auto;
-  max-height: 65vh;
-  width: auto;
-  max-width: 100%;
-  transform: none;
-  margin-bottom: 0;
-}
 
 
 /* ── Card 03 ── */
@@ -383,22 +365,6 @@ body {
   border-top: 1px solid var(--accent);
 }
 
-.card-03 .pane-2 {
-  overflow: hidden;
-}
-
-.card-03 .pane-2-image {
-  overflow: hidden;
-}
-
-.card-03 .pane-2-image img {
-  height: auto;
-  max-height: 65vh;
-  width: auto;
-  max-width: 100%;
-  transform: none;
-  margin-bottom: 0;
-}
 
 /* ────────────────────────────────────────────
    Responsive
