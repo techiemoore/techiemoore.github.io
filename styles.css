@@ -322,7 +322,7 @@ body {
   height: 65vh;
   width: auto;
   transform: scale(1.2);
-  transform-origin: top left;
+  transform-origin: left;
   margin-bottom: 50px;
 }
 
