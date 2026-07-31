@@ -235,7 +235,7 @@ body {
 
 /* ── About view ── */
 .about-view {
-  padding: 28px 48px 40px;
+  padding: 28px 48px 72px;
   max-width: 720px;
   /* Centre the measure in the panel so the leftover width reads as symmetric
      margin rather than a hanging right edge. */
@@ -568,8 +568,11 @@ body {
     padding: 20px 0 0 16px;
   }
 
-  .contact-view,
-  .about-view {
+  .contact-view {
     padding: 20px 16px 24px;
+  }
+
+  .about-view {
+    padding: 20px 16px 44px;
   }
 }
