@@ -162,19 +162,22 @@ body {
   display: block;
 }
 
-/* ── Contact view ── */
-.contact-view {
-  padding: 40px 48px;
-  max-width: 640px;
-  margin-inline: auto;
-}
-
-.contact-heading {
+/* ── View heading ── */
+/* Sits outside the centred body block so it stays anchored to the panel's
+   left edge instead of riding in with the measure. */
+.view-heading {
+  padding: 32px 0 0 24px;
   font-size: 1.1rem;
   font-weight: normal;
   letter-spacing: 0.18em;
   color: var(--text);
-  margin-bottom: 32px;
+}
+
+/* ── Contact view ── */
+.contact-view {
+  padding: 28px 48px 40px;
+  max-width: 640px;
+  margin-inline: auto;
 }
 
 .contact-form {
@@ -232,19 +235,11 @@ body {
 
 /* ── About view ── */
 .about-view {
-  padding: 40px 48px;
+  padding: 28px 48px 40px;
   max-width: 720px;
   /* Centre the measure in the panel so the leftover width reads as symmetric
      margin rather than a hanging right edge. */
   margin-inline: auto;
-}
-
-.about-heading {
-  font-size: 1.1rem;
-  font-weight: normal;
-  letter-spacing: 0.18em;
-  color: var(--text);
-  margin-bottom: 32px;
 }
 
 .about-body {
@@ -569,7 +564,12 @@ body {
     max-width: none;
   }
 
-  .contact-view {
-    padding: 24px 16px;
+  .view-heading {
+    padding: 20px 0 0 16px;
+  }
+
+  .contact-view,
+  .about-view {
+    padding: 20px 16px 24px;
   }
 }
