@@ -56,6 +56,10 @@ body {
 .outer-wrap {
   display: flex;
   flex-direction: column;
+  /* Stop the whole composition growing on ultrawide displays. Capping here
+     rather than on .table-wrap keeps the banner and the panel edge aligned. */
+  max-width: 1600px;
+  margin-inline: auto;
 }
 
 .content-row {
@@ -162,6 +166,7 @@ body {
 .contact-view {
   padding: 40px 48px;
   max-width: 640px;
+  margin-inline: auto;
 }
 
 .contact-heading {
@@ -229,6 +234,9 @@ body {
 .about-view {
   padding: 40px 48px;
   max-width: 720px;
+  /* Centre the measure in the panel so the leftover width reads as symmetric
+     margin rather than a hanging right edge. */
+  margin-inline: auto;
 }
 
 .about-heading {
@@ -355,6 +363,7 @@ body {
   font-size: 0.9rem;
   line-height: 1.7;
   color: var(--text);
+  word-spacing: 0.12em;
 }
 
 .pane-2-text h4 {
