@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Christopher Moore</title>
-  <link rel="stylesheet" href="styles.css?v=35" />
+  <link rel="stylesheet" href="styles.css?v=36" />
 </head>
 <body>
 
@@ -109,10 +109,11 @@
           <div class="about-view">
             <h2 class="about-heading">// ABOUT</h2>
             <div class="about-body">
-              <p class="about-lead">My builds are meant to be handled and believed.</p>
-              <p>My work spans fabrication disciplines and aesthetic registers from clean factory-fresh enclosures to hardware that looks like it's logged decades in the field. I've built fully functional custom computers in vintage chassis, industrial pipe lamps with real valve hardware, steampunk copper flash drives, and networked music players in steel enclosures with green phosphor displays.</p>
-              <p>My background in Information Technology shows in how I approach a build. I think in tolerances and edge cases. I care about what happens when something is actually used, not just photographed. That discipline, applied to fabrication, means the things I build work as well as they look.</p>
-              <p>I'm based outside Boston. I take commissions for prop builds, custom hardware pieces, and functional one-offs.</p>
+              <p class="about-lead">I build things that don't exist.</p>
+              <p>I take commissions for one-of-a-kind functional hardware. Depending on the project, the aesthetic might be 1950s atomic-age futurism, the chunky utilitarian charm of 80s&ndash;90s industrial tech, or the warm walnut-and-brushed-metal elegance of a high-end 1970s hi-fi. What stays constant: every piece is built to be used, not just displayed.</p>
+              <p>Under the enclosure, my builds run on open-source software and local infrastructure. No cloud dependency, no subscriptions, no telemetry. When I hand you a machine, it's <em>yours</em> &mdash; fully, permanently, and serviceably.</p>
+              <p>The ideal commission starts with two things: a problem no off-the-shelf product solves, and a desire for something worth looking at every day. If you've ever thought &ldquo;I wish this existed,&rdquo; it probably can.</p>
+              <p class="about-close">Browse the <a class="about-link" href="#" data-view="portfolio">gallery</a> to see what's possible, then <a class="about-link" href="#" data-view="contact">get in touch</a>.</p>
             </div>
           </div>
         </div>
@@ -142,14 +143,15 @@
   </div>
 
   <script>
-    document.querySelectorAll('.nav-btn[data-view]').forEach(btn => {
-      btn.addEventListener('click', e => {
+    document.querySelectorAll('[data-view]').forEach(el => {
+      el.addEventListener('click', e => {
         e.preventDefault();
-        const view = btn.dataset.view;
+        const view = el.dataset.view;
         document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
         document.getElementById('view-' + view).classList.add('active');
-        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        document.querySelectorAll('.nav-btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.view === view);
+        });
       });
     });
   </script>
