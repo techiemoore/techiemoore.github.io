@@ -401,12 +401,23 @@ body {
   overflow: hidden;
 }
 
+/* --s: per-card width factor so every subject covers a similar area
+   (images are cropped to the subject with a uniform 2% margin) */
 .pane-2-image img {
   display: block;
-  max-height: 65vh;
-  width: auto;
+  width: calc(var(--s, 1) * 100%);
+  height: auto;
   max-width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  object-position: left top;
 }
+
+.card-01 { --s: 0.77; }
+.card-02 { --s: 0.86; }
+.card-03 { --s: 0.83; }
+.card-04 { --s: 0.88; }
+.card-05 { --s: 0.86; }
 
 /* ── Card 02 ── */
 .card-02 {
@@ -550,8 +561,9 @@ body {
 
   .pane-2-image img {
     height: auto;
-    width: 80%;
-    max-width: 420px;
+    width: calc(var(--s, 1) * 90%);
+    max-width: calc(var(--s, 1) * 480px);
+    object-position: center top;
     transform: none;
     margin-bottom: 0;
   }
@@ -589,7 +601,7 @@ body {
   }
 
   .pane-2-image img {
-    width: 100%;
+    width: calc(var(--s, 1) * 100%);
     max-width: none;
   }
 
