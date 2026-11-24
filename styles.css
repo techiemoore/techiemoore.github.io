@@ -325,7 +325,8 @@ body {
 
 /* ── Pane 1: label column ── */
 .pane-1 {
-  flex: 0 0 auto;
+  /* fixed width so every card's divider lines up; must fit the longest .pane-label */
+  flex: 0 0 10.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -348,9 +349,6 @@ body {
   text-align: right;
 }
 
-.a2e {
-  color: var(--a2e);
-}
 
 /* ── Pane 2: text + image ── */
 .pane-2 {
@@ -395,9 +393,9 @@ body {
 .pane-2-image {
   flex: 1;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
-  padding: 20px 0 0 0;
+  padding: 20px 0 20px 40px;
   overflow: hidden;
 }
 
@@ -410,14 +408,14 @@ body {
   max-width: 100%;
   max-height: 65vh;
   object-fit: contain;
-  object-position: left top;
+  object-position: left center;
 }
 
-.card-01 { --s: 0.77; }
-.card-02 { --s: 0.86; }
-.card-03 { --s: 0.83; }
-.card-04 { --s: 0.88; }
-.card-05 { --s: 0.86; }
+.card-01 { --s: 0.83; }
+.card-02 { --s: 0.93; }
+.card-03 { --s: 0.90; }
+.card-04 { --s: 0.95; }
+.card-05 { --s: 0.93; }
 
 /* ── Card 02 ── */
 .card-02 {
@@ -519,6 +517,7 @@ body {
   }
 
   .pane-1 {
+    flex: 0 0 auto;
     flex-direction: row;
     align-items: center;
     gap: 16px;
@@ -561,8 +560,8 @@ body {
 
   .pane-2-image img {
     height: auto;
-    width: calc(var(--s, 1) * 90%);
-    max-width: calc(var(--s, 1) * 480px);
+    width: calc(var(--s, 1) * 83%);
+    max-width: calc(var(--s, 1) * 444px);
     object-position: center top;
     transform: none;
     margin-bottom: 0;
@@ -601,7 +600,7 @@ body {
   }
 
   .pane-2-image img {
-    width: calc(var(--s, 1) * 100%);
+    width: calc(var(--s, 1) * 92.5%);
     max-width: none;
   }
 
