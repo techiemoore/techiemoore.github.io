@@ -411,9 +411,9 @@ body {
   object-position: left center;
 }
 
-.card-01 { --s: 0.83; }
-.card-02 { --s: 0.93; }
-.card-03 { --s: 0.90; }
+.card-01 { --s: 0.78; }
+.card-02 { --s: 0.88; }
+.card-03 { --s: 0.78; }
 .card-04 { --s: 0.95; }
 .card-05 { --s: 0.93; }
 
